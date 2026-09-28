@@ -3,6 +3,9 @@ const express = require("express");
 const app = express();
 const queue_router = require('./routes/queue_router');
 
+app.get("/", (req, res) => {
+    res.send("QueueLess Backend Running");
+});
 app.use(queue_router);
 
 const PORT = 3000;
