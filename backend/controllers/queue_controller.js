@@ -2,6 +2,10 @@ const queues = require("../models/queue_model");
 
 const queue_controller = {
 
+    getAllQueues: (req, res) => {
+        res.json(queues);
+    },
+
     getQueues : (req,res) =>{
         const queueid = Number(req.params.queueid);
         const specified_queue = queues.find((queue => queue.id === queueid));
@@ -11,6 +15,7 @@ const queue_controller = {
         }
         res.json(specified_queue);
     },
+    
     postQueues : (req,res) =>{
         const queueid = Number(req.params.queueid);
         const specified_queue = queues.find((queue => queue.id === queueid));
